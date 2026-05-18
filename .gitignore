@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env
+.env.local
+.DS_Store
+*.log
+
+# Server-side secrets — created on the host, never in repo.
+php/submit.config.php
+submit.config.php

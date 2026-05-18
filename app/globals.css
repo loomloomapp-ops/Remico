@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Helvetica Regular";
+  src: url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.eot");
+  src: url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.svg#Helvetica Regular") format("svg");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: #FAFAF6;
+  color: #0F1410;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-ink/70 backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-cta transition hover:bg-brand-green-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-green disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-ink transition hover:border-ink/40 hover:bg-ink/[0.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink;
+  }
+
+  .btn-red {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-red px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-[#B6140F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-ink/65;
+  }
+
+  .field-input {
+    @apply block w-full rounded-xl border border-line bg-white px-4 py-3.5 text-base text-ink placeholder:text-ink/30 transition focus:border-brand-green focus:outline-none focus:ring-4 focus:ring-brand-green/15;
+  }
+
+  .field-input-invalid {
+    @apply border-brand-red focus:border-brand-red focus:ring-brand-red/15;
+  }
+
+  .field-error {
+    @apply mt-1.5 text-xs font-medium text-brand-red;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.22em] text-brand-green;
+  }
+
+  .h2 {
+    @apply text-h2 font-extrabold text-ink;
+  }
+}
+
+/* Hide native number input arrows */
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Decorative gradient blob — controlled, used once in hero */
+.blob-green {
+  background: radial-gradient(closest-side, rgba(31, 143, 61, 0.18), rgba(31, 143, 61, 0));
+}
+.blob-purple {
+  background: radial-gradient(closest-side, rgba(107, 77, 224, 0.14), rgba(107, 77, 224, 0));
+}

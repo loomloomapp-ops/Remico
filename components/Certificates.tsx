@@ -1,0 +1,120 @@
+import { DownloadSimple, FilePdf, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
+import OpenPopupButton from "./OpenPopupButton";
+
+interface Doc {
+  title: string;
+  desc: string;
+  meta: string;
+  href: string; // place real PDF in /public/docs/ and update this path
+}
+
+const DOCS: Doc[] = [
+  {
+    title: "Висновок державної санітарно-епідеміологічної експертизи",
+    desc: "Підтвердження безпеки засобів для прання та миття посуду для побутового використання.",
+    meta: "PDF · оновлюється щорічно",
+    href: "/docs/remico-ses.pdf",
+  },
+  {
+    title: "Декларація відповідності",
+    desc: "Декларація виробника про відповідність продукції технічним регламентам України.",
+    meta: "PDF · видається на партію",
+    href: "/docs/remico-declaration.pdf",
+  },
+  {
+    title: "Маркування за законодавством України",
+    desc: "Зразок маркування упаковки: склад, попередження, ідентифікація виробника, штрих-код.",
+    meta: "PDF · сторінки етикетки",
+    href: "/docs/remico-labeling.pdf",
+  },
+  {
+    title: "Паспорт безпеки (SDS)",
+    desc: "Класифікація компонентів, правила транспортування, зберігання та утилізації.",
+    meta: "PDF · для логістики та мереж",
+    href: "/docs/remico-sds.pdf",
+  },
+  {
+    title: "Технічні умови виробника",
+    desc: "ТУ на гелі, порошки та засоби для миття посуду — для тендерів і закупівель мереж.",
+    meta: "PDF · за запитом",
+    href: "/docs/remico-tu.pdf",
+  },
+  {
+    title: "Прайс-лист B2B",
+    desc: "Актуальні оптові ціни, фасування, мінімальне замовлення, умови логістики по Україні.",
+    meta: "PDF · надсилається після заявки",
+    href: "#partner",
+  },
+];
+
+export default function Certificates() {
+  return (
+    <section id="certificates" className="bg-white py-24 sm:py-32" aria-labelledby="certs-title">
+      <div className="container-x">
+        <div className="grid items-end gap-8 lg:grid-cols-[1.4fr_1fr]">
+          <div>
+            <p className="section-eyebrow">Документи · сертифікати</p>
+            <h2 id="certs-title" className="mt-3 text-h2 font-extrabold text-ink">
+              Документи та маркування для безпечної роботи з торговими точками
+            </h2>
+          </div>
+          <p className="text-base leading-relaxed text-muted lg:text-[17px]">
+            Продукція REMICO маркована відповідно до чинного законодавства України — це дозволяє партнерам
+            працювати з товаром у роздрібних точках, мережах та оптових каналах без ризику зняття з полиці.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
+          {DOCS.map((d) => (
+            <article
+              key={d.title}
+              className="group flex flex-col rounded-3xl border border-line bg-paper p-6 transition hover:-translate-y-1 hover:border-brand-green/40 hover:shadow-card sm:p-7"
+            >
+              <div className="flex items-start justify-between">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-green-soft text-brand-green-deep">
+                  <FilePdf size={24} weight="duotone" />
+                </span>
+                <span className="rounded-full border border-line bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-ink/55">
+                  Документ
+                </span>
+              </div>
+              <h3 className="mt-5 text-lg font-extrabold leading-snug text-ink">{d.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{d.desc}</p>
+              <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/45">
+                {d.meta}
+              </p>
+              <a
+                href={d.href}
+                target={d.href.startsWith("/docs") ? "_blank" : undefined}
+                rel={d.href.startsWith("/docs") ? "noopener" : undefined}
+                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-brand-green-deep transition group-hover:gap-3"
+              >
+                <DownloadSimple size={16} weight="bold" />
+                Завантажити
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-14 flex flex-col items-start justify-between gap-5 rounded-3xl border border-brand-green/20 bg-brand-green-soft p-7 sm:flex-row sm:items-center sm:p-8">
+          <div className="flex items-start gap-4">
+            <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-green text-white">
+              <ShieldCheck size={24} weight="duotone" />
+            </span>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-green-deep">
+                Повний пакет — за запитом
+              </p>
+              <p className="mt-2 max-w-[44ch] text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
+                Запросимо документи й погодимо умови співпраці під ваш канал.
+              </p>
+            </div>
+          </div>
+          <OpenPopupButton source="certificates" withArrow className="w-full sm:w-auto">
+            Запросити документи та умови
+          </OpenPopupButton>
+        </div>
+      </div>
+    </section>
+  );
+}
