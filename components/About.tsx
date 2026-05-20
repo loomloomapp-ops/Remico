@@ -5,21 +5,21 @@ const CATEGORIES = [
   {
     title: "Гелі для прання",
     desc: "Універсальний і для кольорових тканин. Концентрована формула, зручне дозування, до 120 прань з пляшки.",
-    image: "/brand/gels-shot.png",
+    image: "/brand/about-gels.jpg",
     alt: "Гелі для прання REMICO Universal та Colored Fabrics",
     badge: "Концентрат",
   },
   {
     title: "Пральні порошки",
     desc: "Формати 5 кг і 10 кг — для дому та HoReCa. Універсальний і для кольорового. Ефективно при низьких температурах.",
-    image: "/brand/powders-10kg-shot.jpg",
+    image: "/brand/about-powders.jpg",
     alt: "Пральні порошки REMICO 10 кг — universal та color",
     badge: "5 кг · 10 кг",
   },
   {
     title: "Миючі засоби для посуду",
     desc: "Лінійка з ароматами яблука, лимона та полуниці. М'яка дія до шкіри рук, ефективне розчинення жиру.",
-    image: "/brand/dish-shot.jpg",
+    image: "/brand/about-dish.jpg",
     alt: "Миючі засоби REMICO для посуду",
     badge: "3 аромати",
   },
@@ -59,7 +59,7 @@ export default function About() {
                 i === 0 ? "lg:row-span-1" : ""
               }`}
             >
-              <div className="relative aspect-[5/4] w-full overflow-hidden bg-brand-green-soft">
+              <div className="relative aspect-square w-full overflow-hidden bg-brand-green-soft">
                 <Image
                   src={c.image}
                   alt={c.alt}
