@@ -72,13 +72,13 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Product hero render */}
+        {/* Product hero render — desktop / tablet */}
         <motion.div
           aria-hidden
           initial={{ opacity: 0, x: 60, rotate: -4 }}
           animate={ready ? { opacity: 1, x: 0, rotate: 0 } : { opacity: 0, x: 60, rotate: -4 }}
           transition={{ duration: 1.1, delay: 0.15, ease: "easeOut" }}
-          className="pointer-events-none absolute right-[-6%] bottom-[8%] z-[1] hidden md:block w-[42%] max-w-[640px]"
+          className="pointer-events-none absolute right-[-4%] bottom-[6%] z-[1] hidden md:block w-[44%] max-w-[680px]"
         >
           <motion.div
             animate={{ y: [0, -14, 0], rotate: [0, 1.2, 0] }}
@@ -86,40 +86,60 @@ export default function Hero() {
             className="relative aspect-square"
           >
             <Image
-              src="/brand/gels-shot.png"
+              src="/brand/hero-gel-color.png"
               alt=""
               fill
               priority
-              sizes="(max-width: 1024px) 60vw, 640px"
-              className="object-contain drop-shadow-[0_30px_60px_rgba(15,20,16,0.18)]"
+              sizes="(max-width: 1024px) 60vw, 680px"
+              className="object-contain drop-shadow-[0_30px_60px_rgba(15,20,16,0.22)]"
             />
           </motion.div>
-        </motion.div>
-
-        {/* Mobile product anchor */}
-        <motion.div
-          aria-hidden
-          initial={{ opacity: 0, y: 30 }}
-          animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="pointer-events-none absolute right-[-10%] top-[44%] z-[1] md:hidden w-[60%]"
-        >
-          <div className="relative aspect-square">
-            <Image
-              src="/brand/gels-shot.png"
-              alt=""
-              fill
-              sizes="80vw"
-              className="object-contain opacity-90 drop-shadow-[0_20px_40px_rgba(15,20,16,0.18)]"
-            />
-          </div>
         </motion.div>
 
         {/* Content layer */}
         <div className="relative z-10 w-full h-full flex flex-col items-center">
           <HeroNavbar />
 
-          <div className="w-full flex flex-col items-center pt-6 md:pt-10 px-6 text-center max-w-4xl">
+          {/* Mobile: stacked column — copy then product image */}
+          <div className="flex md:hidden flex-col items-center px-5 pt-2 pb-32 w-full">
+            <HeroBadge ready={ready} />
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={ready ? { opacity: 1, scale: 1 } : hidden}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[2rem] sm:text-5xl font-extrabold text-ink mb-3 tracking-tight leading-[1.05] text-center"
+            >
+              Чистота, що{" "}
+              <span className="text-brand-green">тримає полицю</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={ready ? { opacity: 1 } : hidden}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-[13px] sm:text-base text-ink/70 leading-relaxed max-w-md font-normal text-center"
+            >
+              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів по всій Україні.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative mt-5 w-[78%] max-w-[320px] aspect-square"
+            >
+              <Image
+                src="/brand/hero-gel-color.png"
+                alt="Гелі для прання REMICO"
+                fill
+                sizes="80vw"
+                priority
+                className="object-contain drop-shadow-[0_24px_44px_rgba(15,20,16,0.22)]"
+              />
+            </motion.div>
+          </div>
+
+          {/* Desktop / tablet: centered copy, product floats right */}
+          <div className="hidden md:flex w-full flex-col items-center pt-6 md:pt-10 px-6 text-center max-w-4xl">
             <HeroBadge ready={ready} />
             <motion.h1
               initial={{ opacity: 0, scale: 0.98 }}
@@ -136,7 +156,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-sm sm:text-base md:text-lg text-ink/70 leading-relaxed max-w-xl font-normal"
             >
-              REMICO — український бренд побутової хімії для мереж, магазинів та дистриб'юторів. Гелі для прання, порошки 5 і 10 кг, миючі для посуду та Milo.
+              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів по всій Україні.
             </motion.p>
           </div>
 

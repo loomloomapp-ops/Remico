@@ -13,8 +13,8 @@ const MENU: { label: string; href: string; hasDropdown?: boolean }[] = [
   { label: "Сертифікати", href: "#certificates" },
 ];
 
-const PHONE_DISPLAY = "+38 (067) 000 00 00";
-const PHONE_HREF = "tel:+380670000000";
+const PHONE_DISPLAY = "+38 (098) 780 21 84";
+const PHONE_HREF = "tel:+380987802184";
 
 export default function HeroNavbar() {
   const { open } = usePopup();
@@ -33,7 +33,7 @@ export default function HeroNavbar() {
     <>
       <nav className="flex items-center justify-between py-5 md:py-6 px-5 md:px-10 w-full relative z-10">
         {/* Brand */}
-        <div className="flex-1 flex items-center min-w-0">
+        <div className="flex shrink-0 items-center lg:flex-1">
           <a
             href="#top"
             aria-label="REMICO — на головну"
@@ -45,8 +45,8 @@ export default function HeroNavbar() {
               width={392}
               height={66}
               priority
-              sizes="(max-width: 640px) 150px, 220px"
-              className="h-9 w-auto shrink-0 sm:h-10 lg:h-11"
+              sizes="(max-width: 640px) 160px, 220px"
+              className="h-10 w-auto shrink-0 sm:h-11 lg:h-12"
             />
           </a>
         </div>

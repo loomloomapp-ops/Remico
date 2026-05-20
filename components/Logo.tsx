@@ -9,8 +9,8 @@ export default function Logo({ className = "", invert = false }: { className?: s
         width={392}
         height={66}
         priority
-        sizes="(max-width: 640px) 140px, 220px"
-        className={`h-9 w-auto shrink-0 sm:h-10 lg:h-11 ${invert ? "brightness-0 invert" : ""}`}
+        sizes="(max-width: 640px) 160px, 220px"
+        className={`h-10 w-auto shrink-0 sm:h-11 lg:h-12 ${invert ? "brightness-0 invert" : ""}`}
       />
     </a>
   );

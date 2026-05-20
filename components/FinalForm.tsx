@@ -32,19 +32,19 @@ export default function FinalForm() {
               <ContactRow
                 icon={<Phone size={18} weight="bold" />}
                 label="Відділ продажів"
-                value="+38 (067) 000 00 00"
-                href="tel:+380670000000"
+                value="+38 (098) 780 21 84"
+                href="tel:+380987802184"
               />
               <ContactRow
                 icon={<EnvelopeSimple size={18} weight="bold" />}
                 label="Email"
-                value="b2b@remico.ua"
-                href="mailto:b2b@remico.ua"
+                value="remico2025@gmail.com"
+                href="mailto:remico2025@gmail.com"
               />
               <ContactRow
                 icon={<MapPin size={18} weight="bold" />}
                 label="Графік"
-                value="Пн–Пт · 09:00–18:00"
+                value="Пн–Сб · 08:00–18:00"
               />
               <ContactRow
                 icon={<MapPin size={18} weight="bold" />}

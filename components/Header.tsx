@@ -12,8 +12,8 @@ const NAV = [
   { href: "#partner", label: "Стати партнером" },
 ];
 
-const PHONE_DISPLAY = "+38 (067) 000 00 00";
-const PHONE_HREF = "tel:+380670000000";
+const PHONE_DISPLAY = "+38 (098) 780 21 84";
+const PHONE_HREF = "tel:+380987802184";
 
 export default function Header() {
   const [hidden, setHidden] = useState(true);
@@ -176,11 +176,11 @@ export default function Header() {
               Стати партнером
             </button>
             <div className="flex items-center gap-3 pt-1 text-xs text-muted">
-              <a href="#" className="hover:text-ink">Instagram</a>
+              <a href="https://www.instagram.com/remico.ua/" target="_blank" rel="noopener" className="hover:text-ink">Instagram</a>
               <span>·</span>
-              <a href="#" className="hover:text-ink">Facebook</a>
+              <a href="https://www.facebook.com/profile.php?id=61577934616633" target="_blank" rel="noopener" className="hover:text-ink">Facebook</a>
               <span>·</span>
-              <a href="#" className="hover:text-ink">Telegram</a>
+              <a href="https://www.tiktok.com/@remico.ua" target="_blank" rel="noopener" className="hover:text-ink">TikTok</a>
             </div>
           </div>
         </aside>
