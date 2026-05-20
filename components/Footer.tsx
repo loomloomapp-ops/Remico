@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { EnvelopeSimple, FacebookLogo, InstagramLogo, MapPin, Phone, TiktokLogo } from "@phosphor-icons/react/dist/ssr";
+import Logo from "./Logo";
 
 const NAV = [
   { href: "#about", label: "Про компанію" },
@@ -20,13 +20,7 @@ export default function Footer() {
       <div className="container-x py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Image
-              src="/brand/logo.png"
-              alt="REMICO"
-              width={196}
-              height={33}
-              className="h-8 w-auto brightness-0 invert"
-            />
+            <Logo invert />
             <p className="mt-5 max-w-[36ch] text-sm leading-relaxed text-white/65">
               Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів по всій Україні.
             </p>
