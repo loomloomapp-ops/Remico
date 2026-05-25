@@ -17,36 +17,26 @@ const DOCS: Doc[] = [
   },
   {
     title: "Декларація відповідності",
-    desc: "Декларація виробника про відповідність продукції технічним регламентам України.",
-    meta: "PDF · офіційний документ",
+    desc: "Декларація виробника про відповідність продукції технічним регламентам України та свідоцтво на торговельну марку.",
+    meta: "PDF · 2 сторінки",
     href: "/docs/remico-cert-2.pdf",
-  },
-  {
-    title: "Свідоцтво на торговельну марку",
-    desc: "Документ, що підтверджує права REMICO на торговельну марку та виробництво в Україні.",
-    meta: "PDF · офіційний документ",
-    href: "/docs/remico-cert-3.pdf",
   },
 ];
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="bg-white py-24 sm:py-32" aria-labelledby="certs-title">
-      <div className="container-x">
-        <div className="grid items-end gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <div>
-            <p className="section-eyebrow">Документи · сертифікати</p>
-            <h2 id="certs-title" className="mt-3 text-h2 font-extrabold text-ink">
-              Документи та маркування для безпечної роботи з торговими точками
-            </h2>
-          </div>
-          <p className="text-base leading-relaxed text-muted lg:text-[17px]">
-            Продукція REMICO маркована відповідно до чинного законодавства України — це дозволяє партнерам
-            працювати з товаром у роздрібних точках, мережах та оптових каналах без ризику зняття з полиці.
-          </p>
+    <section id="certificates" className="relative overflow-hidden bg-white py-24 sm:py-32" aria-labelledby="certs-title">
+      <span aria-hidden className="bubble bubble-green bubble-float" style={{ width: 200, height: 200, left: "-50px", bottom: "10%" }} />
+      <span aria-hidden className="bubble bubble-float-slow" style={{ width: 100, height: 100, right: "10%", top: "12%" }} />
+      <div className="container-x relative">
+        <div>
+          <p className="section-eyebrow">Сертифікати</p>
+          <h2 id="certs-title" className="mt-3 text-h2 font-extrabold text-ink">
+            Сертифікати
+          </h2>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:mt-20 sm:grid-cols-2">
           {DOCS.map((d) => (
             <article
               key={d.title}

@@ -104,7 +104,7 @@ export default function LeadForm({
       className={
         bare
           ? "grid gap-4"
-          : `grid gap-4 rounded-3xl border ${
+          : `flex h-full flex-col gap-4 rounded-3xl border ${
               inverse ? "border-white/10 bg-white/[0.06] backdrop-blur" : "border-line bg-white shadow-card"
             } ${compact ? "p-5 sm:p-6" : "p-6 sm:p-8"}`
       }

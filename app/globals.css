@@ -19,7 +19,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 140px;
 }
 
 body {
@@ -90,4 +90,52 @@ input[type="tel"]::-webkit-inner-spin-button {
 }
 .blob-purple {
   background: radial-gradient(closest-side, rgba(107, 77, 224, 0.14), rgba(107, 77, 224, 0));
+}
+
+/* Decorative foam bubble — used across sections to support the "побутова хімія" brand vibe */
+.bubble {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.4) 45%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.45),
+    0 6px 24px rgba(31, 143, 61, 0.08);
+}
+.bubble-green {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(216, 241, 222, 0.95),
+    rgba(216, 241, 222, 0.45) 45%,
+    rgba(216, 241, 222, 0) 72%
+  );
+  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.55);
+}
+
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-14px) translateX(6px);
+  }
+}
+.bubble-float {
+  animation: bubble-float 8s ease-in-out infinite;
+}
+.bubble-float-slow {
+  animation: bubble-float 12s ease-in-out infinite;
+}
+
+/* Product card keeps its rounded corners through hover transitions */
+.product-card {
+  transform-style: preserve-3d;
+  transition-property: transform, box-shadow, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  will-change: transform;
 }

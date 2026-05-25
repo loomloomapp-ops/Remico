@@ -11,7 +11,7 @@ export default function BottomLeftCard({ ready = true, light = false }: { ready?
     <>
       <div className="flex flex-col">
         <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-ink tracking-tight tabular-nums">
-          120+
+          20+
         </span>
         <span className="text-[10px] md:text-[11px] font-semibold text-ink/60 uppercase tracking-[0.14em]">
           Партнерів по Україні

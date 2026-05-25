@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import HeroNavbar from "./HeroNavbar";
 import HeroBadge from "./HeroBadge";
 import BottomLeftCard from "./BottomLeftCard";
 import BottomRightCorner from "./BottomRightCorner";
@@ -20,7 +19,6 @@ const BUBBLES = [
   { size: 70, left: "14%", top: "42%", delay: 1.1, duration: 7, opacity: 0.7 },
 ];
 
-// Detect mobile + reduced motion once on mount to gate expensive loops.
 function useLightMode() {
   const [light, setLight] = useState(true);
   useEffect(() => {
@@ -39,12 +37,11 @@ export default function Hero() {
   const hidden = { opacity: 0 };
 
   return (
-    <div className="w-full min-h-[100dvh] flex items-center justify-center p-3 md:p-5 bg-paper">
+    <div className="w-full min-h-[100dvh] flex items-center justify-center p-3 md:p-5 pt-[120px] md:pt-[140px] bg-paper">
       <section
         id="top"
-        className="relative w-full max-w-[1536px] h-[calc(100dvh-24px)] md:h-[calc(100dvh-40px)] rounded-[1.5rem] md:rounded-[3rem] overflow-hidden flex flex-col items-center group bg-gradient-to-br from-[#D9EDDF] via-[#F1F7EE] to-[#E8F4EB]"
+        className="relative w-full max-w-[1536px] min-h-[calc(100dvh-140px)] md:min-h-[calc(100dvh-160px)] rounded-[1.5rem] md:rounded-[3rem] overflow-hidden flex flex-col items-center group bg-gradient-to-br from-[#D9EDDF] via-[#F1F7EE] to-[#E8F4EB]"
       >
-        {/* Soft accent washes — desktop only. The radial blur is expensive on mobile GPU. */}
         <div
           aria-hidden
           className="hidden md:block absolute -left-32 -top-32 h-[520px] w-[520px] rounded-full blur-3xl opacity-60"
@@ -56,7 +53,6 @@ export default function Hero() {
           style={{ background: "radial-gradient(closest-side, rgba(107,77,224,0.22), rgba(107,77,224,0))" }}
         />
 
-        {/* Foam bubbles — desktop only with motion, mobile gets static decoration */}
         {!light && (
           <div aria-hidden className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             {BUBBLES.map((b, i) => (
@@ -89,101 +85,80 @@ export default function Hero() {
           </div>
         )}
 
-        {/* Product hero render — desktop / tablet only */}
+        {/* Desktop / tablet — hero family render on the right */}
         <div
           aria-hidden
-          className="pointer-events-none absolute right-[-4%] bottom-[6%] z-[1] hidden md:block w-[44%] max-w-[680px]"
+          className="pointer-events-none absolute right-[-2%] bottom-[4%] z-[1] hidden md:block w-[52%] max-w-[760px]"
         >
           {light ? (
-            <div className="relative aspect-square">
+            <div className="relative aspect-[4/3]">
               <Image
-                src="/brand/hero-gel-color.png"
+                src="/brand/family.png"
                 alt=""
                 fill
                 priority
-                sizes="(max-width: 1024px) 60vw, 680px"
+                sizes="(max-width: 1024px) 60vw, 760px"
                 className="object-contain drop-shadow-[0_30px_60px_rgba(15,20,16,0.22)]"
               />
             </div>
           ) : (
             <motion.div
-              initial={{ opacity: 0, x: 60, rotate: -4 }}
-              animate={ready ? { opacity: 1, x: 0, rotate: 0 } : { opacity: 0, x: 60, rotate: -4 }}
+              initial={{ opacity: 0, x: 60 }}
+              animate={ready ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
               transition={{ duration: 1.1, delay: 0.15, ease: "easeOut" }}
+              className="relative aspect-[4/3] will-change-transform"
             >
-              <motion.div
-                animate={{ y: [0, -14, 0], rotate: [0, 1.2, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="relative aspect-square will-change-transform"
-              >
-                <Image
-                  src="/brand/hero-gel-color.png"
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 60vw, 680px"
-                  className="object-contain drop-shadow-[0_30px_60px_rgba(15,20,16,0.22)]"
-                />
-              </motion.div>
+              <Image
+                src="/brand/family.png"
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1024px) 60vw, 760px"
+                className="object-contain drop-shadow-[0_30px_60px_rgba(15,20,16,0.22)]"
+              />
             </motion.div>
           )}
         </div>
 
-        {/* Content layer */}
         <div className="relative z-10 w-full h-full flex flex-col items-center">
-          <HeroNavbar />
-
-          {/* Mobile: stacked column — copy then product image. No looped motion, single fade. */}
-          <div className="flex md:hidden flex-col items-center px-5 pt-2 pb-32 w-full">
+          {/* Mobile */}
+          <div className="flex md:hidden flex-col items-center px-5 pt-10 pb-32 w-full">
             <HeroBadge ready={ready} light />
             <h1
-              className="text-[2rem] sm:text-5xl font-extrabold text-ink mb-3 tracking-tight leading-[1.05] text-center transition-opacity duration-500"
+              className="text-[1.6rem] sm:text-4xl font-extrabold text-ink mb-3 tracking-tight leading-[1.15] text-center transition-opacity duration-500"
               style={{ opacity: ready ? 1 : 0 }}
             >
-              Чистота, що <span className="text-brand-green">тримає полицю</span>
+              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів{" "}
+              <span className="text-brand-green">по всій Україні</span>
             </h1>
-            <p
-              className="text-[13px] sm:text-base text-ink/70 leading-relaxed max-w-md font-normal text-center transition-opacity duration-500 delay-150"
-              style={{ opacity: ready ? 1 : 0 }}
-            >
-              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів по всій Україні.
-            </p>
 
             <div
-              className="relative mt-5 w-[78%] max-w-[320px] aspect-square transition-opacity duration-500 delay-300"
+              className="relative mt-6 w-[92%] max-w-[420px] aspect-[4/3] transition-opacity duration-500 delay-300"
               style={{ opacity: ready ? 1 : 0 }}
             >
               <Image
-                src="/brand/hero-gel-color.png"
-                alt="Гелі для прання REMICO"
+                src="/brand/family.png"
+                alt="Лінійка побутової хімії REMICO"
                 fill
-                sizes="80vw"
+                sizes="90vw"
                 priority
                 className="object-contain"
               />
             </div>
           </div>
 
-          {/* Desktop / tablet: centered copy, product floats right */}
-          <div className="hidden md:flex w-full flex-col items-center pt-6 md:pt-10 px-6 text-center max-w-4xl">
+          {/* Desktop */}
+          <div className="hidden md:flex w-full flex-col items-start pt-10 md:pt-16 px-10 lg:px-16 max-w-[1100px]">
             <HeroBadge ready={ready} />
             <motion.h1
               initial={{ opacity: 0, scale: 0.98 }}
               animate={ready ? { opacity: 1, scale: 1 } : hidden}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-extrabold text-ink mb-3 tracking-tight leading-[1.02]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-extrabold text-ink mb-3 tracking-tight leading-[1.05] max-w-[18ch]"
             >
-              Чистота, що{" "}
-              <span className="text-brand-green">тримає полицю</span>
+              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів{" "}
+              <span className="text-brand-green">по всій Україні</span>
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={ready ? { opacity: 1 } : hidden}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-sm sm:text-base md:text-lg text-ink/70 leading-relaxed max-w-xl font-normal"
-            >
-              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів по всій Україні.
-            </motion.p>
           </div>
 
           <BottomLeftCard ready={ready} light={light} />

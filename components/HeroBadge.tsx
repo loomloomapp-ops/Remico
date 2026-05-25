@@ -12,7 +12,7 @@ export default function HeroBadge({ ready = true, light = false }: { ready?: boo
       >
         <Sparkles className="w-4 h-4 text-brand-green" />
         <span className="text-[13px] font-semibold text-ink/85 uppercase tracking-[0.14em]">
-          Український виробник · B2B
+          Український виробник побутової хімії
         </span>
       </div>
     );
@@ -26,7 +26,7 @@ export default function HeroBadge({ ready = true, light = false }: { ready?: boo
     >
       <Sparkles className="w-4 h-4 text-brand-green" />
       <span className="text-[13px] font-semibold text-ink/85 uppercase tracking-[0.14em]">
-        Український виробник · B2B
+        Український виробник побутової хімії
       </span>
     </motion.div>
   );

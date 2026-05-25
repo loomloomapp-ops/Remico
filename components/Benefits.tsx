@@ -78,7 +78,7 @@ export default function Benefits() {
               Готові обговорити умови?
             </p>
             <p className="mt-2 max-w-[40ch] text-2xl font-extrabold leading-tight sm:text-3xl">
-              Розрахуємо прайс і умови під ваш канал — за один дзвінок.
+              Розрахуємо прайс і умови під ваш канал.
             </p>
           </div>
           <OpenPopupButton source="benefits" variant="red" withArrow className="w-full sm:w-auto">

@@ -9,7 +9,7 @@ import Hero from "@/components/Hero";
 import MidForm from "@/components/MidForm";
 import PopupForm from "@/components/PopupForm";
 import { PopupProvider } from "@/components/PopupContext";
-import ProductBand from "@/components/ProductBand";
+import Products from "@/components/Products";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 export default function HomePage() {
@@ -18,8 +18,8 @@ export default function HomePage() {
       <Header />
       <main id="main">
         <Hero />
-        <ProductBand />
         <About />
+        <Products />
         <MidForm />
         <Benefits />
         <Certificates />

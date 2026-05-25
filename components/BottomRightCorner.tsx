@@ -27,12 +27,9 @@ export default function BottomRightCorner({ ready = true, light = false }: { rea
         <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-brand-green" />
       </div>
 
-      <div className="flex flex-col">
-        <span className="text-[15px] md:text-[20px] font-bold text-ink">Каталог продукції</span>
-        <div className="flex items-center gap-1 text-ink/55 group-hover:text-brand-green transition-colors">
-          <span className="text-[12px] md:text-[14px] font-medium">Гелі · Порошки · Milo</span>
-          <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
-        </div>
+      <div className="flex items-center gap-1 text-ink group-hover:text-brand-green transition-colors">
+        <span className="text-[15px] md:text-[20px] font-bold">Каталог продукції</span>
+        <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
       </div>
     </>
   );

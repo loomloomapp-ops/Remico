@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MapPin, Phone, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import LeadForm from "./LeadForm";
 
@@ -13,8 +12,8 @@ export default function FinalForm() {
       <div className="pointer-events-none absolute -right-32 bottom-10 h-[420px] w-[420px] blob-purple" aria-hidden="true" />
 
       <div className="container-x relative">
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.05fr]">
-          <div>
+        <div className="grid items-stretch gap-12 lg:grid-cols-[1fr_1.05fr]">
+          <div className="flex flex-col">
             <p className="section-eyebrow">Стати партнером REMICO</p>
             <h2 id="final-title" className="mt-3 text-h2 font-extrabold leading-tight text-ink">
               Станьте партнером REMICO у своєму регіоні
@@ -53,20 +52,11 @@ export default function FinalForm() {
               />
             </div>
 
-            <div className="mt-10 hidden overflow-hidden rounded-3xl border border-line bg-white lg:block">
-              <Image
-                src="/brand/family.png"
-                alt=""
-                width={2400}
-                height={821}
-                sizes="50vw"
-                loading="lazy"
-                className="h-auto w-full object-contain"
-              />
-            </div>
           </div>
 
-          <LeadForm source="final" submitLabel="Надіслати заявку" />
+          <div className="flex flex-col">
+            <LeadForm source="final" submitLabel="Надіслати заявку" />
+          </div>
         </div>
       </div>
     </section>
