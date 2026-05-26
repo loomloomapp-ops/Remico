@@ -38,3 +38,10 @@ section.py-24{padding-top:3.5rem !important;padding-bottom:3.5rem !important}
 }
 
 @media (max-width:767px){main#main > div.pt-\[120px\]{padding-top:80px !important}}
+
+/* mobile partner popup: scrollable + reachable close button */
+@media (max-width:767px){
+  div[aria-labelledby="popup-title"]{align-items:flex-start !important;padding-top:env(safe-area-inset-top) !important}
+  div[aria-labelledby="popup-title"] > div{max-height:92dvh !important;overflow-y:auto !important;overscroll-behavior:contain;border-top-left-radius:0 !important;border-top-right-radius:0 !important;border-bottom-left-radius:1.5rem !important;border-bottom-right-radius:1.5rem !important}
+  div[aria-labelledby="popup-title"] > div > button[aria-label="Закрити форму"]{position:fixed !important;top:max(0.75rem, env(safe-area-inset-top)) !important;right:0.75rem !important;z-index:120 !important;box-shadow:0 6px 18px rgba(15,20,16,0.18)}
+}
