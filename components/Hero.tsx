@@ -128,8 +128,8 @@ export default function Hero() {
               className="text-[1.6rem] sm:text-4xl font-extrabold text-ink mb-3 tracking-tight leading-[1.15] text-center transition-opacity duration-500"
               style={{ opacity: ready ? 1 : 0 }}
             >
-              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів{" "}
-              <span className="text-brand-green">по всій Україні</span>
+              Побутова хімія для магазинів і дистриб&apos;юторів{" "}
+              <span className="text-brand-green">по Україні</span>
             </h1>
 
             <div
@@ -156,8 +156,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-extrabold text-ink mb-3 tracking-tight leading-[1.05] max-w-[18ch]"
             >
-              Побутова хімія для дистриб&apos;юторів, магазинів та мережевих гіпермаркетів{" "}
-              <span className="text-brand-green">по всій Україні</span>
+              Побутова хімія для магазинів і дистриб&apos;юторів{" "}
+              <span className="text-brand-green">по Україні</span>
             </motion.h1>
           </div>
 

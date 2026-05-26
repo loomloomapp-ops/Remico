@@ -11,7 +11,7 @@ export default function PopupForm() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/55 p-0 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-start justify-center bg-ink/55 p-0 backdrop-blur-sm sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="popup-title"
@@ -19,12 +19,12 @@ export default function PopupForm() {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="relative w-full max-w-2xl overflow-hidden rounded-t-3xl bg-paper shadow-card sm:rounded-3xl">
+      <div className="relative w-full max-w-2xl max-h-[100dvh] sm:max-h-[92vh] overflow-y-auto overscroll-contain rounded-b-3xl bg-paper shadow-card sm:rounded-3xl">
         <button
           type="button"
           onClick={close}
           aria-label="Закрити форму"
-          className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink transition hover:bg-ink hover:text-white"
+          className="fixed sm:absolute right-3 sm:right-4 top-3 sm:top-4 z-[120] inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink shadow-card transition hover:bg-ink hover:text-white"
         >
           <X size={18} weight="bold" />
         </button>
